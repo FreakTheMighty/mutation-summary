@@ -189,7 +189,7 @@ class TreeMirrorClient {
 
     var self = this;
 
-    var queries = [{ all: true }];
+    var queries = [];
 
     if (testingQueries)
       queries = queries.concat(testingQueries);
@@ -319,7 +319,7 @@ class TreeMirrorClient {
 
     Object.keys(attributeChanged).forEach((attrName) => {
       attributeChanged[attrName].forEach((element) => {
-        var record = map.get(element);
+        var record:AttributeData = map.get(element);
         if (!record) {
           record = <AttributeData>this.serializeNode(element);
           record.attributes = {};
