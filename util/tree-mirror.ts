@@ -54,6 +54,10 @@ class TreeMirror {
       this.deserializeNode(children[i], <Element>this.root);
   }
 
+  getNode(id:number) : Node {
+    return this.idMap[id];
+  }
+
   applyChanged(removed:NodeData[],
                addedOrMoved:PositionData[],
                attributes:AttributeData[],
