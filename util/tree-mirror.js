@@ -254,3 +254,4 @@ var TreeMirrorClient = (function () {
     };
     return TreeMirrorClient;
 })();
+//# sourceMappingURL=tree-mirror.js.map

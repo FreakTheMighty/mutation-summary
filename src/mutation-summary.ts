@@ -13,10 +13,11 @@
 // limitations under the License.
 
 var MutationObserverCtor;
-if (typeof WebKitMutationObserver !== 'undefined')
-  MutationObserverCtor = WebKitMutationObserver;
-else
+if (typeof window['WebKitMutationObserver'] !== 'undefined') {
+    MutationObserverCtor = window['WebKitMutationObserver'];
+} else {
   MutationObserverCtor = MutationObserver;
+}
 
 if (MutationObserverCtor === undefined) {
   console.error('DOM Mutation Observers are required.');
