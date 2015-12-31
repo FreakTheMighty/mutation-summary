@@ -193,7 +193,7 @@ class TreeMirrorClient {
 
     var self = this;
 
-    var queries = [{ all: true }];
+    var queries = [<Query>{ all: true }];
 
     if (testingQueries)
       queries = queries.concat(testingQueries);

@@ -17,10 +17,12 @@ var __extends = (this && this.__extends) || function (d, b) {
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
 var MutationObserverCtor;
-if (typeof WebKitMutationObserver !== 'undefined')
-    MutationObserverCtor = WebKitMutationObserver;
-else
+if (typeof window['WebKitMutationObserver'] !== 'undefined') {
+    MutationObserverCtor = window['WebKitMutationObserver'];
+}
+else {
     MutationObserverCtor = MutationObserver;
+}
 if (MutationObserverCtor === undefined) {
     console.error('DOM Mutation Observers are required.');
     console.error('https://developer.mozilla.org/en-US/docs/DOM/MutationObserver');

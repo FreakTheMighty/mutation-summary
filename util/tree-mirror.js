@@ -10,6 +10,9 @@ var TreeMirror = (function () {
         for (var i = 0; i < children.length; i++)
             this.deserializeNode(children[i], this.root);
     };
+    TreeMirror.prototype.getNode = function (id) {
+        return this.idMap[id];
+    };
     TreeMirror.prototype.applyChanged = function (removed, addedOrMoved, attributes, text) {
         var _this = this;
         // NOTE: Applying the changes can result in an attempting to add a child
@@ -142,6 +145,9 @@ var TreeMirrorClient = (function () {
     };
     TreeMirrorClient.prototype.forgetNode = function (node) {
         this.knownNodes.delete(node);
+    };
+    TreeMirrorClient.prototype.getNodeId = function (node) {
+        return this.knownNodes.get(node);
     };
     TreeMirrorClient.prototype.serializeNode = function (node, recursive) {
         if (node === null)
