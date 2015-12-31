@@ -221,6 +221,10 @@ class TreeMirrorClient {
     this.knownNodes.delete(node);
   }
 
+  public getNodeId(node:Node) : number {
+    return this.knownNodes.set(node, id);
+  }
+
   private serializeNode(node:Node, recursive?:boolean):NodeData {
     if (node === null)
       return null;
