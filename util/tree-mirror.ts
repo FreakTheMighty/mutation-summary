@@ -222,7 +222,7 @@ class TreeMirrorClient {
   }
 
   public getNodeId(node:Node) : number {
-    return this.knownNodes.set(node, id);
+    return this.knownNodes.get(node);
   }
 
   private serializeNode(node:Node, recursive?:boolean):NodeData {
