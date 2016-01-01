@@ -115,7 +115,7 @@ class TreeMirror {
     });
   }
 
-  private deserializeNode(nodeData:NodeData, parent?:Element):Node {
+  protected deserializeNode(nodeData:NodeData, parent?:Element):Node {
     if (nodeData === null)
       return null;
 
@@ -221,7 +221,7 @@ class TreeMirrorClient {
     return id;
   }
 
-  private forgetNode(node:Node) {
+  protected forgetNode(node:Node) {
     this.knownNodes.delete(node);
   }
 
@@ -229,7 +229,7 @@ class TreeMirrorClient {
     return this.knownNodes.get(node);
   }
 
-  private serializeNode(node:Node, recursive?:boolean):NodeData {
+  protected serializeNode(node:Node, recursive?:boolean):NodeData {
     if (node === null)
       return null;
 
